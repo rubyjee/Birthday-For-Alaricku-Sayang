@@ -1,0 +1,1374 @@
+
+/* =========================================
+   ALARICKU BIRTHDAY DIARY
+   Vintage Modern Scrapbook - Grey Edition
+========================================= */
+
+/* GOOGLE FONTS */
+:root {
+  --ink: #34322f;
+  --muted: #77736d;
+  --paper: #eeeae2;
+  --paper-dark: #d8d2c8;
+  --background: #77736e;
+  --background-deep: #625e59;
+  --accent: #aaa39a;
+  --white: #f8f6f1;
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --script: "Homemade Apple", cursive;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.7;
+
+  /* BACKGROUND FOTO */
+  background:
+    linear-gradient(
+      rgba(75, 72, 68, .72),
+      rgba(75, 72, 68, .82)
+    ),
+    url("assets/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* TEXTURE */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: .08;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* NAVBAR */
+.topbar {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,.22);
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 25px;
+  letter-spacing: .04em;
+}
+
+.brand span {
+  color: #ded7ce;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 27px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.topbar nav a {
+  opacity: .82;
+  transition: opacity .2s;
+}
+
+.topbar nav a:hover {
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid #ffffff70;
+  background: transparent;
+  color: white;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+/* GENERAL LAYOUT */
+.section-shell {
+  width: min(1100px, calc(100% - 48px));
+  margin: auto;
+}
+
+.narrow {
+  max-width: 760px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.handwritten {
+  font-family: var(--script);
+  line-height: 1.8;
+}
+
+/* COVER */
+.cover {
+  min-height: 650px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  gap: 50px;
+  padding-top: 65px;
+  padding-bottom: 80px;
+
+  color: var(--white);
+}
+
+.cover .eyebrow {
+  color: #e0d9d0;
+}
+
+.tiny-note {
+  color: #e0d9d0;
+  font-size: 13px;
+  transform: rotate(-4deg);
+  margin: 30px 0 5px;
+}
+
+.cover h1 {
+  font: 500 clamp(65px, 9vw, 112px)/.82 var(--serif);
+  letter-spacing: -.045em;
+  margin: 15px 0 28px;
+}
+
+.cover h1 em,
+h2 em {
+  font-weight: 400;
+}
+
+.cover-description {
+  max-width: 390px;
+  color: #e5e1dc;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  border: 0;
+  padding: 13px 21px;
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+
+  transition: transform .2s, background .2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-dark {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.button-dark:hover {
+  background: #1f1e1c;
+}
+
+.button-light {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.cover-date {
+  margin-top: 50px;
+  color: #d0c9c0;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+/* COVER PHOTO */
+.cover-art {
+  min-height: 450px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.paper-back {
+  position: absolute;
+  width: 310px;
+  height: 400px;
+  background: #c9c2b8;
+  transform: rotate(8deg);
+  box-shadow: 0 20px 50px #28252140;
+}
+
+.polaroid {
+  position: relative;
+  background: #f1eee7;
+  padding: 15px 15px 42px;
+  box-shadow: 0 18px 45px #29262255;
+  color: var(--ink);
+}
+
+.cover-polaroid {
+  width: 285px;
+  transform: rotate(-6deg);
+}
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  background: #bcb7af;
+}
+
+.cover-photo {
+  height: 310px;
+}
+
+.photo-frame img,
+.memory-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cover-polaroid > p {
+  font: 15px var(--script);
+  text-align: center;
+  margin: 13px 0 0;
+}
+
+.photo-placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #625e59;
+  font: 16px var(--script);
+  padding: 15px;
+}
+
+.photo-empty .photo-placeholder {
+  display: flex;
+}
+
+/* SCRAPBOOK DECORATION */
+.tape {
+  position: absolute;
+  width: 85px;
+  height: 24px;
+  background: #d9d4ca;
+  opacity: .78;
+  top: -10px;
+  left: calc(50% - 42px);
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+
+.tape-cover {
+  top: 35px;
+  left: 48%;
+  transform: rotate(9deg);
+}
+
+.doodle {
+  position: absolute;
+  color: #e5ded5;
+}
+
+.doodle-star {
+  font-size: 45px;
+  right: 7%;
+  top: 12%;
+}
+
+.doodle-heart {
+  font-size: 38px;
+  left: 6%;
+  bottom: 13%;
+  transform: rotate(-15deg);
+}
+
+.cover-number {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: #e0d9d0;
+}
+
+.floating-stamp {
+  position: fixed;
+  color: #e6dfd5;
+  opacity: .2;
+  font-size: 50px;
+  pointer-events: none;
+}
+
+.stamp-one {
+  left: 2%;
+  top: 35%;
+}
+
+.stamp-two {
+  right: 3%;
+  bottom: 15%;
+}
+
+/* SECTION SPACING */
+.intro,
+.letter-section,
+.memories,
+.reasons,
+.playlist-section,
+.wishes,
+.surprise-section,
+.ending {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+/* INTRO */
+.intro {
+  text-align: center;
+}
+
+.section-heading {
+  text-align: center;
+  color: var(--white);
+  max-width: 650px;
+  margin: 0 auto 48px;
+}
+
+.section-heading .eyebrow,
+.intro > .eyebrow {
+  color: #e0d9d0;
+}
+
+h2 {
+  font: 500 clamp(42px, 6vw, 66px)/.98 var(--serif);
+  letter-spacing: -.025em;
+}
+
+.section-heading h2 {
+  margin: 15px 0;
+}
+
+.section-heading > p:last-child {
+  font-size: 13px;
+  color: #e1dcd5;
+}
+
+.paper-card {
+  background: var(--paper);
+  padding: 48px 55px;
+  text-align: left;
+  box-shadow: 0 15px 40px #302d2940;
+  position: relative;
+}
+
+.intro-note {
+  transform: rotate(-1deg);
+}
+
+.paper-pin {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  font-size: 24px;
+  color: #9b948b;
+}
+
+.intro-note p {
+  font: 16px/1.9 var(--serif);
+}
+
+.intro-note p:first-of-type {
+  font-weight: 700;
+}
+
+.signature {
+  font-size: 16px !important;
+  text-align: right;
+  margin-top: 25px !important;
+}
+
+/* =========================================
+   MODERN DECORATIVE ENVELOPE
+========================================= */
+
+.letter-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 690px;
+  padding-top: 45px;
+}
+
+/* ENVELOPE BODY */
+.envelope {
+  width: min(430px, 90vw);
+  height: 280px;
+  position: relative;
+  margin-top: 35px;
+  perspective: 1000px;
+
+  filter: drop-shadow(0 20px 24px #29262245);
+}
+
+/* BACK PART */
+.envelope-back {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    145deg,
+    #e4e0d9,
+    #c2bcb3 55%,
+    #aaa49b
+  );
+
+  border: 1px solid #aaa49b;
+  border-radius: 12px;
+}
+
+/* LETTER INSIDE */
+.letter-paper {
+  position: absolute;
+  z-index: 2;
+
+  left: 7%;
+  top: 5%;
+  width: 86%;
+  height: 88%;
+
+  overflow-y: auto;
+  padding: 30px 28px;
+
+  background:
+    linear-gradient(135deg, #fffdf8, #f0ece3);
+
+  border: 1px solid #ded8ce;
+  border-radius: 7px;
+
+  opacity: 0;
+  transform: translateY(0) scale(.95);
+
+  transition:
+    transform 1s cubic-bezier(.22,.61,.36,1),
+    opacity .6s ease;
+
+  box-shadow: 0 5px 20px #4a453d30;
+  font: 14px/1.8 var(--serif);
+}
+
+.letter-paper h3 {
+  font: 600 25px var(--serif);
+  margin-bottom: 12px;
+}
+
+.letter-paper p {
+  margin-bottom: 12px;
+}
+
+.letter-date {
+  font: 9px var(--sans) !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #8b847a;
+}
+
+/* FRONT PART */
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 12px;
+}
+
+/* FRONT POCKET */
+.envelope-pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: linear-gradient(
+    145deg,
+    #d5d0c7,
+    #aaa49b 75%,
+    #99938b
+  );
+
+  clip-path: polygon(
+    0 0,
+    50% 59%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  border-radius: 12px;
+}
+
+/* TOP FLAP */
+.envelope-flap {
+  position: absolute;
+  z-index: 4;
+
+  inset: 0 0 auto;
+  height: 62%;
+
+  background: linear-gradient(
+    160deg,
+    #f0ede7,
+    #d1cbc1
+  );
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+
+  transform-origin: top;
+  transition: transform .85s ease;
+  backface-visibility: hidden;
+}
+
+/* POSTAGE STAMP DECORATION */
+.envelope-front::before {
+  content: "✿";
+
+  position: absolute;
+  z-index: 6;
+
+  top: 22px;
+  right: -18px;
+
+  width: 58px;
+  height: 68px;
+
+  display: grid;
+  place-items: center;
+
+  color: #68635d;
+  font-size: 25px;
+
+  background:
+    linear-gradient(white, #e5e0d7);
+
+  border: 5px dotted #b5afa5;
+  outline: 1px solid #e9e4dc;
+
+  transform: rotate(9deg);
+  box-shadow: 0 4px 10px #39352f30;
+}
+
+/* FLOWER ORNAMENT */
+.envelope-front::after {
+  content: "✧  ❀";
+
+  position: absolute;
+  z-index: 6;
+
+  bottom: 20px;
+  right: 25px;
+
+  color: #716b63;
+  font-family: var(--serif);
+  font-size: 20px;
+
+  transform: rotate(-8deg);
+}
+
+/* WAX SEAL */
+.wax-seal {
+  position: absolute;
+  z-index: 7;
+
+  top: 65%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #969087,
+      #68635d 65%,
+      #48443f
+    );
+
+  color: #f1ece4;
+
+  display: grid;
+  place-items: center;
+
+  font: 25px var(--serif);
+
+  border: 3px double #d4cdc2;
+
+  box-shadow:
+    0 4px 10px #4b474055,
+    inset 0 0 0 2px #ffffff20;
+
+  transition:
+    opacity .3s,
+    transform .3s;
+}
+
+/* OPEN ENVELOPE */
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.5);
+}
+
+/* LETTER EMERGES */
+.envelope.letter-out .letter-paper {
+  z-index: 6;
+  opacity: 1;
+  transform: translateY(-220px) scale(1);
+  height: 440px;
+}
+
+/* OPEN LETTER BUTTON */
+.open-letter {
+  margin-top: 25px;
+}
+
+.hint {
+  color: #e2dcd4;
+  font-size: 11px;
+  letter-spacing: .06em;
+  margin-top: 13px;
+}
+
+/* MEMORIES */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.memory-card {
+  position: relative;
+  background: var(--paper);
+  padding: 12px 12px 18px;
+  box-shadow: 0 12px 30px #29262240;
+}
+
+.rotate-left {
+  transform: rotate(-3deg);
+}
+
+.rotate-right {
+  transform: rotate(3deg);
+}
+
+.memory-offset {
+  margin-top: 35px;
+}
+
+.memory-photo {
+  height: 220px;
+  position: relative;
+  background: #c2bcb3;
+  overflow: hidden;
+}
+
+.memory-caption {
+  font: 15px var(--script);
+  text-align: center;
+  margin: 13px 0 3px;
+}
+
+.memory-subcaption {
+  text-align: center;
+  font: 11px var(--serif);
+  color: #77716a;
+  margin: 0;
+}
+
+.small-note {
+  text-align: center;
+  color: #e2dcd4;
+  font-size: 11px;
+  letter-spacing: .06em;
+  margin-top: 38px;
+}
+
+/* REASONS */
+.reasons-paper {
+  max-width: 780px;
+  margin: auto;
+  background: var(--paper);
+  padding: 45px 65px;
+  box-shadow: 0 15px 40px #302d2940;
+  transform: rotate(.5deg);
+}
+
+.reasons-paper ol {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.reasons-paper li {
+  padding: 9px 0 9px 10px;
+  border-bottom: 1px dashed #c8c1b7;
+  font: 17px var(--serif);
+}
+
+.reasons-paper li::marker {
+  color: #8a837a;
+}
+
+.reasons-end {
+  text-align: right;
+  margin: 30px 0 0;
+  font-size: 13px;
+}
+
+/* PLAYLIST */
+.music-player {
+  max-width: 800px;
+  margin: auto;
+  padding: 35px;
+
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 35px;
+  align-items: center;
+
+  background: var(--paper);
+  box-shadow: 0 15px 40px #302d2940;
+}
+
+/* CASSETTE */
+.cassette {
+  min-height: 250px;
+  background: #aaa49b;
+  border: 9px solid #c8c2b8;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+
+  box-shadow:
+    inset 0 0 0 2px #8e887f,
+    0 5px 10px #5d585044;
+}
+
+.cassette-label {
+  background: #e7e2d9;
+  padding: 15px 18px;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.cassette-label .eyebrow {
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+
+.cassette-label h3 {
+  font: 600 36px/.8 var(--serif);
+  margin: 0 0 8px;
+}
+
+.cassette-label .handwritten {
+  font-size: 11px;
+  margin: 0;
+}
+
+.cassette-window {
+  width: 70%;
+  height: 45px;
+  margin: 12px auto 0;
+
+  background: #77736e;
+  border: 5px solid #d3cdc3;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cassette-window span {
+  width: 28px;
+  height: 28px;
+  border: 5px dotted #d9d3c9;
+  border-radius: 50%;
+}
+
+.cassette-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.cassette-bottom i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6b665f;
+}
+
+/* PLAYER CONTROLS */
+.player-controls .eyebrow {
+  color: #817a70;
+}
+
+.player-controls h3 {
+  font: 600 29px var(--serif);
+  margin: 4px 0 0;
+}
+
+.track-artist {
+  color: #77716a;
+  font-size: 11px;
+}
+
+.progress-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 9px;
+  color: #77716a;
+}
+
+.progress-wrap input {
+  flex: 1;
+  accent-color: #68635d;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 17px;
+}
+
+.round-control,
+.play-control {
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--white);
+  background: var(--ink);
+}
+
+.round-control {
+  width: 35px;
+  height: 35px;
+  font-size: 10px;
+}
+
+.play-control {
+  width: 48px;
+  height: 48px;
+  font-size: 15px;
+}
+
+.music-hint {
+  margin: 15px 0 0;
+  font-size: 10px;
+  color: #77716a;
+}
+
+/* TRACK LIST */
+.track-list {
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.track {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #ffffff45;
+  background: transparent;
+  color: var(--white);
+
+  padding: 14px 10px;
+
+  display: grid;
+  grid-template-columns: 40px 1fr 25px;
+  text-align: left;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.track > span:first-child {
+  font: 18px var(--serif);
+  color: #d4cdc4;
+}
+
+.track b {
+  display: block;
+  font: 16px var(--serif);
+  font-weight: 600;
+}
+
+.track small {
+  display: block;
+  font-size: 9px;
+  color: #ded8d0;
+}
+
+.track.active {
+  background: #ffffff16;
+}
+
+/* BIRTHDAY WISHES */
+.wish-card {
+  background: var(--paper);
+  padding: 50px 60px;
+  box-shadow: 0 15px 40px #302d2940;
+}
+
+.wish-card .eyebrow {
+  color: #77716a;
+}
+
+.wish-card h2 {
+  margin: 10px 0 25px;
+}
+
+.wish-card > p:not(.eyebrow):not(.signature) {
+  font: 16px/1.9 var(--serif);
+}
+
+/* SURPRISE */
+.surprise-card {
+  background: #4d4944;
+  color: var(--white);
+  padding: 65px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px #302d2940;
+}
+
+.surprise-card .eyebrow {
+  color: #d5cec5;
+}
+
+.surprise-card h2 {
+  margin: 18px 0;
+}
+
+.surprise-card > p:not(.eyebrow) {
+  max-width: 430px;
+  margin: 0 auto 25px;
+  color: #e0d9d0;
+  font-size: 13px;
+}
+
+.surprise-star {
+  position: absolute;
+  top: 25px;
+  right: 7%;
+  font-size: 55px;
+  color: #d2cbc1;
+  opacity: .3;
+}
+
+.surprise-message {
+  max-width: 590px;
+  margin: 35px auto 0;
+  padding: 28px;
+  background: #f0ece4;
+  color: var(--ink);
+  animation: reveal .7s ease both;
+}
+
+.surprise-message h3 {
+  font: 600 32px var(--serif);
+}
+
+.surprise-message p {
+  font: 15px/1.8 var(--serif);
+}
+
+.surprise-heart {
+  color: #81766d;
+  font-size: 28px;
+  animation: heartbeat 1.3s infinite;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ENDING */
+.ending {
+  text-align: center;
+  color: var(--white);
+  max-width: 700px;
+}
+
+.ending-script {
+  color: #e2dcd4;
+  font-size: 14px;
+}
+
+.ending h2 {
+  font-size: clamp(48px, 7vw, 75px);
+  margin: 10px 0 20px;
+}
+
+.ending > p:not(.handwritten):not(.ending-title):not(.tiny-footer) {
+  color: #e2dcd4;
+  font-size: 13px;
+  max-width: 450px;
+  margin: auto;
+}
+
+.ending-title {
+  margin-top: 38px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.ending-heart {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.tiny-footer {
+  margin-top: 45px;
+  color: #d2cbc2;
+  font-size: 8px;
+  letter-spacing: .2em;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #ffffff35;
+  color: #e0d9d0;
+  padding: 22px 24px;
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 800px) {
+  .topbar nav {
+    gap: 14px;
+    font-size: 9px;
+  }
+
+  .cover {
+    gap: 15px;
+  }
+
+  .memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .memory-offset {
+    margin-top: 25px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 65px;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  .topbar {
+    width: calc(100% - 32px);
+    min-height: 65px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .topbar nav {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 64px;
+    right: 0;
+    left: 0;
+    padding: 18px;
+    background: #514d48;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .topbar nav.show {
+    display: flex;
+  }
+
+  .section-shell {
+    width: calc(100% - 32px);
+  }
+
+  /* COVER */
+  .cover {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 65px;
+    gap: 10px;
+  }
+
+  .cover-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cover-date {
+    margin-top: 30px;
+  }
+
+  .cover-art {
+    min-height: 390px;
+  }
+
+  .paper-back {
+    width: 265px;
+    height: 340px;
+  }
+
+  .cover-polaroid {
+    width: 245px;
+  }
+
+  .cover-photo {
+    height: 260px;
+  }
+
+  .cover-number {
+    right: 5px;
+    bottom: -5px;
+  }
+
+  /* SECTION SPACING */
+  .intro,
+  .letter-section,
+  .memories,
+  .reasons,
+  .playlist-section,
+  .wishes,
+  .surprise-section,
+  .ending {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  /* INTRO */
+  .paper-card,
+  .wish-card {
+    padding: 35px 27px;
+  }
+
+  .intro-note p {
+    font-size: 15px;
+  }
+
+  /* ENVELOPE */
+  .letter-stage {
+    min-height: 590px;
+    padding-top: 25px;
+  }
+
+  .envelope {
+    height: 230px;
+  }
+
+  .letter-paper {
+    padding: 20px 17px;
+    font-size: 12px;
+  }
+
+  .letter-paper h3 {
+    font-size: 21px;
+  }
+
+  .envelope-front::before {
+    width: 47px;
+    height: 56px;
+    right: -10px;
+    top: 17px;
+    font-size: 20px;
+  }
+
+  .envelope-front::after {
+    font-size: 16px;
+    right: 15px;
+    bottom: 14px;
+  }
+
+  .wax-seal {
+    width: 49px;
+    height: 49px;
+    font-size: 21px;
+  }
+
+  .envelope.letter-out .letter-paper {
+    height: 390px;
+    transform: translateY(-190px) scale(1);
+  }
+
+  /* MEMORIES */
+  .memory-grid {
+    gap: 17px;
+  }
+
+  .memory-photo {
+    height: 165px;
+  }
+
+  .memory-card {
+    padding: 9px 9px 14px;
+  }
+
+  .memory-caption {
+    font-size: 12px;
+  }
+
+  .memory-subcaption {
+    font-size: 10px;
+  }
+
+  /* REASONS */
+  .reasons-paper {
+    padding: 30px 22px;
+  }
+
+  .reasons-paper li {
+    font-size: 15px;
+  }
+
+  /* MUSIC */
+  .music-player {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 25px;
+  }
+
+  .cassette {
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .player-controls {
+    padding: 0 4px;
+  }
+
+  /* WISHES */
+  .wish-card > p:not(.eyebrow):not(.signature) {
+    font-size: 15px;
+  }
+
+  /* SURPRISE */
+  .surprise-card {
+    padding: 55px 22px;
+  }
+
+  /* FOOTER */
+  footer {
+    font-size: 9px;
+  }
+}
